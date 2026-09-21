@@ -3,7 +3,7 @@
 
 package:
   name: r-tikzdevice
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace('-', '_') }}"
 
 source:
   url:
@@ -32,6 +32,8 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-filehash                   # [build_platform != target_platform]
+    - r-png                        # [build_platform != target_platform]
   host:
     - r-base
     - r-filehash >=2.3
